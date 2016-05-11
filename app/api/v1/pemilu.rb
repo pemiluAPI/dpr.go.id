@@ -305,5 +305,28 @@ module Pemilu
         }
       end
     end
+
+    resource :jdih_kategori do
+      desc "Mengembalikan data kategori JDIH"
+      get do
+        jdih_array = []
+
+        JdihKategori.all.each do |data|
+            jdih_array << {
+              id: data.id,
+              nama_fraksi: data.nama
+            }
+        end
+
+        {
+          results: {
+            count: jdih_array.count,
+            total: JdihKategori.all.count,
+            data: jdih_array
+          }
+        }
+      end
+    end
+
   end
 end

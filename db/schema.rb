@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502144730) do
+ActiveRecord::Schema.define(version: 20160511145556) do
 
   create_table "anggota_alat_kelengkapan", force: true do |t|
     t.string   "no_anggota"
@@ -71,6 +71,12 @@ ActiveRecord::Schema.define(version: 20160502144730) do
     t.string   "tentang"
     t.string   "dokumen_url"
     t.date     "tanggal_ditetapkan"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jdih_kategori", force: true do |t|
+    t.string   "nama"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
