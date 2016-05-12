@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511145556) do
+ActiveRecord::Schema.define(version: 20160512083853) do
 
   create_table "anggota_alat_kelengkapan", force: true do |t|
     t.string   "no_anggota"
@@ -87,6 +87,13 @@ ActiveRecord::Schema.define(version: 20160511145556) do
     t.string   "judul"
     t.string   "pengusul"
     t.string   "page_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "periode_dpr", force: true do |t|
+    t.string   "nama"
+    t.string   "periode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

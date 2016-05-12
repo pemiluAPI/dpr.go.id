@@ -328,5 +328,28 @@ module Pemilu
       end
     end
 
+    resource :periode_dpr do
+      desc "Mengembalikan data Periode DPR"
+      get do
+        periode_array = []
+
+        PeriodeDpr.all.each do |data|
+            periode_array << {
+              id: data.id,
+              nama: data.nama,
+              periode: data.periode.html_safe
+            }
+        end
+
+        {
+          results: {
+            count: periode_array.count,
+            total: PeriodeDpr.all.count,
+            data: periode_array
+          }
+        }
+      end
+    end
+
   end
 end
